@@ -2,13 +2,15 @@
 // + Create git: https://github.com/hybridgame/EECustom
 
 BACKUP ~EECustom/backup~
-AUTHOR ~Investor~
+AUTHOR ~HybridGame~
+VERSION "2019.04.08"
+
 LANGUAGE ~All~  ~All~ ~EECustom/Language/setup.tra~
 
-//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG1
-//////////////////////////////////////////////////////////////////////////
 
+// ------------------------------------------------------------------------------------------------
 // Tutorial items and bag of holding in Candlekeep
 
 BEGIN @101
@@ -18,12 +20,11 @@ EXTEND_BOTTOM ~AR2600.BCS~ ~EECustom/script/bg1item.baf~
 COPY ~EECustom/item/ttaxe1.itm~ ~override~
 COPY ~EECustom/item/ttdagg1.itm~ ~override~
 
-//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG2
-//////////////////////////////////////////////////////////////////////////
 
-// -----------------------------------------------------------------------
-// Tutorial items and bag of holding in BG2 Irenicus dungeon
+// ------------------------------------------------------------------------------------------------
+// Tutorial items and bag of holding in Irenicus dungeon
 
 BEGIN @201
 REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
@@ -32,7 +33,7 @@ EXTEND_BOTTOM ~AR0602.BCS~ ~EECustom/script/bg2item.baf~
 COPY ~EECustom/item/ttaxe1.itm~ ~override~
 COPY ~EECustom/item/ttdagg1.itm~ ~override~
 
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Triple-class HLA tables
 
 BEGIN @202
@@ -41,11 +42,10 @@ REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
 COPY ~EECustom/2da/lufmc.2da~ ~override~
 COPY ~EECustom/2da/lufmt.2da~ ~override~
 
-//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG1 + BG2
-//////////////////////////////////////////////////////////////////////////
 
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Remove XP cap
 
 BEGIN @301
@@ -65,7 +65,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~SODSTRTA.2da~ THEN BEGIN
     BUT_ONLY
 END
 
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Un-nerfed bard spell progression table
 
 BEGIN @302
@@ -73,7 +73,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
 
 COPY ~EECustom/2da/mxsplbrd.2da~ ~override~
 
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Easy spell learning
 
 BEGIN @303
@@ -87,7 +87,7 @@ COPY_EXISTING ~intmod.2da~ ~override~
   SET_2DA_ENTRIES_NOW ~intmod~ 1
   BUT_ONLY
 
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Happy patch
 
 BEGIN @304
@@ -107,7 +107,7 @@ COPY_EXISTING ~sharteel.bcs~ ~override~
   END
   BUT_ONLY IF_EXISTS
 
-// -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------
 // Unlimited Stacking
 BEGIN @305
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
@@ -118,5 +118,5 @@ OUTER_SET stack = 999
 INCLUDE ~EECustom/lib/increase_gem.tpa~
 OUTER_SET stack = 999
 INCLUDE ~EECustom/lib/increase_potion.tpa~
-OUTER_SET stack = 999
-INCLUDE ~EECustom/lib/increase_scroll.tpa~
+//OUTER_SET stack = 999
+//INCLUDE ~EECustom/lib/increase_scroll.tpa~

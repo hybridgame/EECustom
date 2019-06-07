@@ -4,11 +4,11 @@
 
 @101 = ~Tutorial items and bag of holding in Candlekeep~
 
-@201 = ~Tutorial items and bag of holding in BG2 Irenicus dungeon~
+@201 = ~Tutorial items and bag of holding in Irenicus dungeon~
 @202 = ~Triple-class HLA tables~
 
-@301 = ~Remove XP cap (level 40)~
-@302 = ~Un-nerfed bard spell progression table~
-@303 = ~Easy Spell Learning~
+@301 = ~Remove XP cap (maximum level 40)~
+@302 = ~Un-nerfed bard spell progression table (maximum level 8)~
+@303 = ~Easy spell learning~
 @304 = ~Happy patch~
-@305 = ~Unlimited Stacking (Ammo, Gem, Jewelry, Potion and Scroll)~
+@305 = ~Unlimited Stacking (ammo, gem, jewelry and potion)~
