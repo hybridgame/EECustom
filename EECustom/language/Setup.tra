@@ -1,6 +1,6 @@
-@1 = ~BG1EE reqiuired~
-@2 = ~BG2EE reqiuired~
-@3 = ~BG1EE or BG2EE reqiuired~
+@1 = ~BG1EE required~
+@2 = ~BG2EE required~
+@3 = ~BG1EE or BG2EE required~
 
 @101 = ~Tutorial items and bag of holding in Candlekeep~
 
@@ -12,3 +12,4 @@
 @303 = ~Easy spell learning~
 @304 = ~Happy patch~
 @305 = ~Unlimited Stacking (ammo, gem, jewelry and potion)~
+@306 = ~Free action fix (item and spell)~

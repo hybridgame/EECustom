@@ -15,6 +15,7 @@
 * Easy spell learning
 * Happy patch
 * Unlimited Stacking (ammo, gem, jewelry and potion)
+* Free action fix (item and spell)
 
 ## 한국어
 
@@ -23,7 +24,7 @@
 
 ### BG2EE only
 * 이레니쿠스 던전에서 무한의 가방과 튜토리얼 아이템 제공
-* 트리플 클래스 하이레벨 어빌리티 지원
+* 파/메/시, 파/메/클 하이레벨 어빌리티 지원
 
 ### BGEE
 * 경험치 제한 해제 (최대 40 레벨)
@@ -31,3 +32,4 @@
 * 100% 마법 이해
 * 명성치에 따른 파티원 탈퇴 방지
 * 무제한 겹치기 (목걸이, 보석, 포션, 탄환)
+* 프리 액션 수정 (아이템과 스펠)

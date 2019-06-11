@@ -20,6 +20,13 @@ EXTEND_BOTTOM ~AR2600.BCS~ ~EECustom/script/bg1item.baf~
 COPY ~EECustom/item/ttaxe1.itm~ ~override~
 COPY ~EECustom/item/ttdagg1.itm~ ~override~
 
+// ------------------------------------------------------------------------------------------------
+// Free action fix
+BEGIN @306
+REQUIRE_PREDICATE GAME_IS ~bgee~ @1
+
+COPY  ~EECustom/freeaction/bg1~ ~override~
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG2EE
 
@@ -41,6 +48,13 @@ REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
   
 COPY ~EECustom/2da/lufmc.2da~ ~override~
 COPY ~EECustom/2da/lufmt.2da~ ~override~
+
+// Free action fix
+BEGIN @306
+REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
+
+COPY  ~EECustom/freeaction/bg1~ ~override~
+COPY  ~EECustom/freeaction/bg2~ ~override~
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BGEE
@@ -108,7 +122,7 @@ COPY_EXISTING ~sharteel.bcs~ ~override~
   BUT_ONLY IF_EXISTS
 
 // ------------------------------------------------------------------------------------------------
-// Unlimited Stacking
+// Unlimited stacking
 BEGIN @305
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
 
