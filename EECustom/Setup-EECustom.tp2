@@ -3,7 +3,7 @@
 
 BACKUP ~EECustom/backup~
 AUTHOR ~HybridGame~
-VERSION "2019.04.08"
+VERSION "2019.06.16"
 
 LANGUAGE ~All~  ~All~ ~EECustom/Language/setup.tra~
 
@@ -19,13 +19,6 @@ REQUIRE_PREDICATE GAME_IS ~bgee~ @1
 EXTEND_BOTTOM ~AR2600.BCS~ ~EECustom/script/bg1item.baf~
 COPY ~EECustom/item/ttaxe1.itm~ ~override~
 COPY ~EECustom/item/ttdagg1.itm~ ~override~
-
-// ------------------------------------------------------------------------------------------------
-// Free action fix
-BEGIN @306
-REQUIRE_PREDICATE GAME_IS ~bgee~ @1
-
-COPY  ~EECustom/freeaction/bg1~ ~override~
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG2EE
@@ -49,19 +42,87 @@ REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
 COPY ~EECustom/2da/lufmc.2da~ ~override~
 COPY ~EECustom/2da/lufmt.2da~ ~override~
 
-// Free action fix
-BEGIN @306
-REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
-
-COPY  ~EECustom/freeaction/bg1~ ~override~
-COPY  ~EECustom/freeaction/bg2~ ~override~
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BGEE
 
 // ------------------------------------------------------------------------------------------------
-// Remove XP cap
 
+// Free action fix
+BEGIN @306
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+
+ACTION_IF FILE_EXISTS_IN_GAME potn45.itm THEN BEGIN
+  COPY_EXISTING ~potn45.itm~  ~override~
+                ~ring09.itm~  ~override~
+                ~sppr403.spl~ ~override~
+                ~sw2h06.itm~  ~override~
+                ~sw2h13.itm~  ~override~
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi613 END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi305 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spra301 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spin572 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 14023 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 16    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 126   END // Movement Modifier
+  LPF DELETE_EFFECT INT_VAR match_opcode = 126 match_parameter2 = 2     END // Movement Modifier
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME blun30.itm THEN BEGIN
+  COPY_EXISTING ~blun30.itm~  ~override~
+                ~npplat.itm~  ~override~
+                ~sper12.itm~  ~override~
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi613 END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi305 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spra301 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spin572 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 14023 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 16    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 126   END // Movement Modifier
+  LPF DELETE_EFFECT INT_VAR match_opcode = 126 match_parameter2 = 2     END // Movement Modifier
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME c2keld01.itm THEN BEGIN
+  COPY_EXISTING ~c2keld01.itm~ ~override~
+                ~c2mazz01.itm~  ~override~
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi613 END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi305 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spra301 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spin572 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 14023 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 16    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 126   END // Movement Modifier
+  LPF DELETE_EFFECT INT_VAR match_opcode = 126 match_parameter2 = 2     END // Movement Modifier
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME z_57.itm THEN BEGIN
+  COPY_EXISTING ~z_57.itm~ ~override~ // valkyrie ring
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi613 END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spwi305 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spra301 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = spin572 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 169 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 110   END // Improved Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 38    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 14023 END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 16    END // Haste
+  LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 126   END // Movement Modifier
+  LPF DELETE_EFFECT INT_VAR match_opcode = 126 match_parameter2 = 2     END // Movement Modifier
+END
+
+// Remove XP cap
 BEGIN @301
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
 
