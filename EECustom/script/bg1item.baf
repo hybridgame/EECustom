@@ -1,14 +1,15 @@
 IF
-	Global("BG1MoveItem","AR2600",0)
+	Global("TUTORIALITEMCHECK","GLOBAL",1)
+	Global("CreateTutorialItem","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("BG1MoveItem","AR2600",1)
-		ActionOverride("Container 1",CreateItem("TTSWORD1",1,1,1))  // 장검 +1
-		ActionOverride("Container 1",CreateItem("TTSWORD6",1,1,1))  // 양손검
-		ActionOverride("Container 1",CreateItem("TTSHLD01",1,1,1))  // 중형 방패 +1
-		ActionOverride("Container 1",CreateItem("TTSCRL01",1,1,1))  // 화염 화살
-		ActionOverride("Container 1",CreateItem("TTSCRL02",1,1,1))  // 몬스터 소환 I
-		ActionOverride("Container 1",CreateItem("TTDAGG1",1,1,1))  // 단검
-		ActionOverride("Container 1",CreateItem("TTAXE1",1,1,1))  // 전투 도끼
-		ActionOverride("Container 1",CreateItem("BAG31",1,1,1))  // 무한의 가방
+		SetGlobal("CreateTutorialItem","MYAREA",1)
+		ActionOverride(Player1,CreateItem("TTSCRL01",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSCRL02",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSHLD01",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSWORD1",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSWORD2",1,1,1))
+		ActionOverride(Player1,CreateItem("bag19",1,1,1))
+        ActionOverride(Player1,CreateItem("bag05",1,1,1))
+        ActionOverride(Player1,CreateItem("bag06",1,1,1))
 END

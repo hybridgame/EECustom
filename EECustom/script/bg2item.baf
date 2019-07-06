@@ -1,15 +1,15 @@
 IF
-    Global("BG2Item","AR0602",0)
+    Global("TakeImportItems","MYAREA",1)
+    Global("CreateTutorialItem","MYAREA",0)
 THEN
     RESPONSE #100
-        SetGlobal("BG2Item","AR0602",1)
-        ActionOverride("Jailkeep Table",CreateItem("TTSWORD1",1,1,1))  // 장검 +1
-        ActionOverride("Jailkeep Table",CreateItem("TTSHLD01",1,1,1))  // 중형 방패 +1
-        ActionOverride("Jailkeep Table",CreateItem("TTSCRL01",1,1,1))  // 화염 화살
-        ActionOverride("Jailkeep Table",CreateItem("TTSCRL02",1,1,1))  // 몬스터 소환 I
-        ActionOverride("Jailkeep Table",CreateItem("TTDAGG1",1,1,1))  // 단검
-        ActionOverride("Jailkeep Table",CreateItem("TTAXE1",1,1,1))  // 전투 도끼
-        ActionOverride("Jailkeep Table",CreateItem("bag04",1,1,1))
-        ActionOverride("Jailkeep Table",CreateItem("bag05",1,1,1))
-        ActionOverride("Jailkeep Table",CreateItem("bag06",1,1,1))
+        SetGlobal("CreateTutorialItem","MYAREA",1)
+        ActionOverride(Player1,CreateItem("TTSCRL01",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSCRL02",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSHLD01",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSWORD1",1,1,1))
+        ActionOverride(Player1,CreateItem("TTSWORD2",1,1,1))
+        ActionOverride(Player1,CreateItem("bag04",1,1,1))
+        ActionOverride(Player1,CreateItem("bag05",1,1,1))
+        ActionOverride(Player1,CreateItem("bag06",1,1,1))
 END
