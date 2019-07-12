@@ -8,8 +8,7 @@ THEN
         ActionOverride(Player1,CreateItem("TTSCRL02",1,1,1))
         ActionOverride(Player1,CreateItem("TTSHLD01",1,1,1))
         ActionOverride(Player1,CreateItem("TTSWORD1",1,1,1))
-        ActionOverride(Player1,CreateItem("TTSWORD2",1,1,1))
-		ActionOverride(Player1,CreateItem("bag19",1,1,1))
+		ActionOverride(Player1,CreateItem("bag31",1,1,1))
         ActionOverride(Player1,CreateItem("bag05",1,1,1))
         ActionOverride(Player1,CreateItem("bag06",1,1,1))
 END
