@@ -3,7 +3,7 @@
 
 BACKUP ~EECustom/backup~
 AUTHOR ~HybridGame~
-VERSION "2019.07.06"
+VERSION "20191025"
 
 LANGUAGE  ~All~
           ~All~
@@ -32,18 +32,18 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
 ACTION_IF GAME_IS ~bgee~
 BEGIN
     EXTEND_BOTTOM ~AR2600.BCS~ ~EECustom/script/bg1item.baf~
-    ACTION_FOR_EACH store IN 31 05 06
+    ACTION_FOR_EACH store IN 31 02 03 05 06
     BEGIN
         COPY_EXISTING ~bag%store%.sto~ ~override~
-            WRITE_SHORT 0x22 20000
+            WRITE_SHORT 0x22 30000
     END
 END
 ELSE BEGIN
     EXTEND_BOTTOM ~AR0602.BCS~ ~EECustom/script/bg2item.baf~
-    ACTION_FOR_EACH store IN 04 05 06
+    ACTION_FOR_EACH store IN 04 02 03 05 06
     BEGIN
         COPY_EXISTING ~bag%store%.sto~ ~override~
-            WRITE_SHORT 0x22 20000
+            WRITE_SHORT 0x22 30000
     END
 END
 
@@ -68,7 +68,7 @@ ACTION_FOR_EACH file IN
 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~%file%~ THEN
     BEGIN
-        COPY_EXISTING ~%file%~  ~override~  // Potion of Freedom
+        COPY_EXISTING ~%file%~  ~override~
             PATCH_FOR_EACH spell IN spwi613 spwi305 spra301 spin572
             BEGIN   // Protection from Spell
                 LPF DELETE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = EVAL ~%spell%~ END
