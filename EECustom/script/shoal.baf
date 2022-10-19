@@ -1,0 +1,7 @@
+IF
+    Global("ShoalHelmet","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateItem("HELM04",1,1,1)
+		SetGlobal("ShoalHelmet","GLOBAL",1)
+END

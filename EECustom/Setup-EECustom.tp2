@@ -16,7 +16,7 @@ LANGUAGE  ~All~
 // Triple-class HLA tables
 
 BEGIN @202
-REQUIRE_PREDICATE GAME_IS ~bg2ee~ @2
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @2
   
 COPY ~EECustom/2da/lufmc.2da~ ~override~
      ~EECustom/2da/lufmt.2da~ ~override~
@@ -27,9 +27,9 @@ COPY ~EECustom/2da/lufmc.2da~ ~override~
 // ------------------------------------------------------------------------------------------------
 // Tutorial items and containters
 BEGIN @300
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
-ACTION_IF GAME_IS ~bgee~
+ACTION_IF GAME_IS ~bgee eet~
 BEGIN
     EXTEND_BOTTOM ~AR2600.BCS~ ~EECustom/script/bg1item.baf~
     ACTION_FOR_EACH store IN 31 02 03 05 06
@@ -37,6 +37,7 @@ BEGIN
         COPY_EXISTING ~bag%store%.sto~ ~override~
             WRITE_SHORT 0x22 30000
     END
+    EXTEND_TOP ~SHOAL.BCS~ ~EECustom/script/shoal.baf~
 END
 ELSE BEGIN
     EXTEND_BOTTOM ~AR0602.BCS~ ~EECustom/script/bg2item.baf~
@@ -51,7 +52,7 @@ END
 // ------------------------------------------------------------------------------------------------
 // Free action fix
 BEGIN @306
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 ACTION_FOR_EACH file IN
     potn45.itm    // Potion of Freedom
@@ -93,7 +94,7 @@ END
 // ------------------------------------------------------------------------------------------------
 // Remove XP cap
 BEGIN @301
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 COPY ~EECustom/2da/xpcap.2da~ ~override~
      ~EECustom/2da/xplevel.2da~ ~override~
@@ -109,7 +110,7 @@ END
 // Un-nerfed bard spell progression table
 
 BEGIN @302
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 COPY ~EECustom/2da/mxsplbrd.2da~ ~override~
 
@@ -117,7 +118,7 @@ COPY ~EECustom/2da/mxsplbrd.2da~ ~override~
 // Easy spell learning
 
 BEGIN @303
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 COPY_EXISTING ~intmod.2da~ ~override~
     COUNT_2DA_ROWS ~3~ "rows"
@@ -132,7 +133,7 @@ COPY_EXISTING ~intmod.2da~ ~override~
 // Happy patch
 
 BEGIN @304
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 // stop rep complaints
 COPY_EXISTING ~happy.2da~ ~override~
@@ -151,7 +152,7 @@ COPY_EXISTING ~sharteel.bcs~ ~override~
 // ------------------------------------------------------------------------------------------------
 // Unlimited stacking
 BEGIN @305
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee~ @3
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 OUTER_SET stack = 999
 INCLUDE ~EECustom/lib/increase_ammo.tpa~
