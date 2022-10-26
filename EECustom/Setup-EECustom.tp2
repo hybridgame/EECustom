@@ -1,13 +1,8 @@
-// 2019-04-04
-// + Create git: https://github.com/hybridgame/EECustom
-
 BACKUP ~EECustom/backup~
 AUTHOR ~HybridGame~
-VERSION "20191025"
+VERSION "20221025"
 
-LANGUAGE  ~All~
-          ~All~
-          ~EECustom/Language/setup.tra~
+LANGUAGE  ~All~ ~All~ ~EECustom/Language/setup.tra~
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG2EE
@@ -57,6 +52,8 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 ACTION_FOR_EACH file IN
     potn45.itm    // Potion of Freedom
     ring09.itm    // Ring of Free Action 
+    bdring09.itm  // Ring of Free Action 
+    freering.itm  // Ring of Free Action 
     sppr403.spl   // Free Action
     sw2h06.itm    // Spider's Bane
     sw2h13.itm    // Spider's Bane
@@ -66,6 +63,8 @@ ACTION_FOR_EACH file IN
     c2keld01.itm  // Firecam Full-Plate Armor
     c2mazz01.itm  // Sword of Arvoreen
     z_57.itm      // Valkyrie ring
+    trring01.itm  // Ring of Free Action
+    trring02.itm  // Ring of Free Action
 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~%file%~ THEN
     BEGIN
@@ -98,6 +97,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 
 COPY ~EECustom/2da/xpcap.2da~ ~override~
      ~EECustom/2da/xplevel.2da~ ~override~
+     ~EECustom/2da/WSPATCK.2da~ ~override~
 
 ACTION_FOR_EACH file IN STARTARE.2da SODSTRTA.2da
 BEGIN
@@ -157,3 +157,4 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet~ @3
 OUTER_SET stack = 999
 INCLUDE ~EECustom/lib/increase_ammo.tpa~
 INCLUDE ~EECustom/lib/increase_potion.tpa~
+INCLUDE ~EECustom/lib/increase_gem.tpa~
