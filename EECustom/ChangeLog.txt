@@ -1,5 +1,8 @@
+2022-10-27
+- 탈란티르 모드 자유 행동의 반지들 가속과 이동 속도에 영향을 받게 수정
+
 2022-10-25
-+ Add unlimited stacking gems
+- 보석들 무제한으로 누적 가능하게 수정
 
 2019-04-04
-+ Create git: https://github.com/hybridgame/EECustom
+- Create git: https://github.com/hybridgame/EECustom

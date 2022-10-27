@@ -1,6 +1,6 @@
 BACKUP ~EECustom/backup~
 AUTHOR ~HybridGame~
-VERSION "20221025"
+VERSION "2022-10-27"
 
 LANGUAGE  ~All~ ~All~ ~EECustom/Language/setup.tra~
 
@@ -63,8 +63,8 @@ ACTION_FOR_EACH file IN
     c2keld01.itm  // Firecam Full-Plate Armor
     c2mazz01.itm  // Sword of Arvoreen
     z_57.itm      // Valkyrie ring
-    trring01.itm  // Ring of Free Action
-    trring02.itm  // Ring of Free Action
+    thring01.itm  // Ring of Free Action
+    thring02.itm  // Ring of Free Action
 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~%file%~ THEN
     BEGIN
