@@ -1,6 +1,6 @@
 BACKUP ~EECustom/backup~
 AUTHOR ~HybridGame~
-VERSION "2022-10-27"
+VERSION "2022-11-04"
 
 LANGUAGE  ~All~ ~All~ ~EECustom/Language/setup.tra~
 
@@ -36,7 +36,7 @@ BEGIN
 END
 ELSE BEGIN
     EXTEND_BOTTOM ~AR0602.BCS~ ~EECustom/script/bg2item.baf~
-    ACTION_FOR_EACH store IN 04 02 03 05 06
+    ACTION_FOR_EACH store IN 02 03 04 05 06
     BEGIN
         COPY_EXISTING ~bag%store%.sto~ ~override~
             WRITE_SHORT 0x22 30000
@@ -62,9 +62,13 @@ ACTION_FOR_EACH file IN
     sper12.itm    // Ixil's Spike +6
     c2keld01.itm  // Firecam Full-Plate Armor
     c2mazz01.itm  // Sword of Arvoreen
+    z_33.itm      // Windforce
     z_57.itm      // Valkyrie ring
     thring01.itm  // Ring of Free Action
     thring02.itm  // Ring of Free Action
+    s#ring01      // Ring of Free Action +1
+    s#ring02      // Ring of Free Action +2
+    u#hfssls      // Lolth's Cruel Sting
 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~%file%~ THEN
     BEGIN
