@@ -1,8 +1,91 @@
 BACKUP ~EECustom/backup~
 AUTHOR ~HybridGame~
-VERSION "2022-11-04"
+VERSION "2022-11-06"
 
 LANGUAGE  ~All~ ~All~ ~EECustom/Language/setup.tra~
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// BGEE
+
+// ------------------------------------------------------------------------------------------------
+// SotSC bug patch
+
+BEGIN @100
+REQUIRE_PREDICATE FILE_EXISTS ~override/L#ORM1.are~ @101
+REQUIRE_PREDICATE FILE_EXISTS ~override/L#ORM2.are~ @101
+
+COPY_EXISTING L#ORM1.are override
+    LPF fj_are_structure
+        INT_VAR
+        fj_type = 2 // travel
+        fj_box_left = 2200
+        fj_box_top = 1
+        fj_box_right = 2400
+        fj_box_bottom = 30
+        fj_cursor_idx = 34
+        fj_flags = 1540 // no_NPCs = 512, party_required = save = 4
+        fj_alt_x = 2300
+        fj_alt_y = 15
+        fj_loc_x = 2300
+        fj_loc_y = 15
+        fj_vertex_0 = 2200 + (1 << 16)
+        fj_vertex_1 = 2400 + (1 << 16)
+        fj_vertex_2 = 2400 + (30 << 16)
+        fj_vertex_3 = 2200 + (30 << 16)
+        STR_VAR
+        fj_structure_type = region
+        fj_name = TRAR5100
+        fj_destination_area = ar5100
+        fj_destination_name = L#ORM
+    END
+    LPF fj_are_structure
+        INT_VAR
+        fj_type = 2 // travel
+        fj_box_left = 1000
+        fj_box_top = 2830
+        fj_box_right = 1800
+        fj_box_bottom = 2870
+        fj_cursor_idx = 34
+        fj_flags = 1540 // no_NPCs = 512, party_required = save = 4
+        fj_alt_x = 1400
+        fj_alt_y = 2850
+        fj_loc_x = 1400
+        fj_loc_y = 2850
+        fj_vertex_0 = 1000 + (2830 << 16)
+        fj_vertex_1 = 1800 + (2830 << 16)
+        fj_vertex_2 = 1800 + (2870 << 16)
+        fj_vertex_3 = 1000 + (2870 << 16)
+        STR_VAR
+        fj_structure_type = region
+        fj_name = TRL#ORM2
+        fj_destination_area = L#ORM2
+        fj_destination_name = En
+    END
+    
+COPY_EXISTING L#ORM2.are override
+    LPF fj_are_structure
+        INT_VAR
+        fj_type = 2 // travel
+        fj_box_left = 800
+        fj_box_top = 1
+        fj_box_right = 1600
+        fj_box_bottom = 40
+        fj_cursor_idx = 34
+        fj_flags = 1540 // no_NPCs = 512, party_required = save = 4
+        fj_alt_x = 1200
+        fj_alt_y = 20
+        fj_loc_x = 1200
+        fj_loc_y = 20
+        fj_vertex_0 = 800 + (1 << 16)
+        fj_vertex_1 = 1600 + (1 << 16)
+        fj_vertex_2 = 1600 + (40 << 16)
+        fj_vertex_3 = 800 + (40 << 16)
+        STR_VAR
+        fj_structure_type = region
+        fj_name = TRL#ORM1
+        fj_destination_area = L#ORM1
+        fj_destination_name = En3
+    END
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BG2EE
@@ -17,7 +100,7 @@ COPY ~EECustom/2da/lufmc.2da~ ~override~
      ~EECustom/2da/lufmt.2da~ ~override~
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// BGEE
+// BGEE & BG2EE
 
 // ------------------------------------------------------------------------------------------------
 // Tutorial items and containters

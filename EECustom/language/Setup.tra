@@ -1,5 +1,8 @@
-@2 = ~BG2EE required~
-@3 = ~BG1EE or BG2EE required~
+@2 = ~BG2EE not installed~
+@3 = ~BG1EE and BG2EE not installed~
+
+@100 = ~SotSC bug patch~
+@101 = ~SotSC not installed~
 
 @202 = ~Triple-class HLA tables~
 
